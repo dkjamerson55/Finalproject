@@ -4,9 +4,9 @@ import {
     Route, 
     Link,
     Switch,
-    useRouteMatch
+    // useRouteMatch
 } from 'react-router-dom'
-import { Switch } from 'react-router-dom/cjs/react-router-dom.min'
+
 
 function Navigation() {
   return (
@@ -15,9 +15,17 @@ function Navigation() {
         <div>
             <nav className='navBar'>
                 <ul>
-                    <li><Link to ="/">Home</Link></li>
-                    <li><Link to ="/users">Users</Link></li>
-                    <li><Link to ="/posts">Posts</Link></li>
+                    <li>
+                        <Link to ="/">Home</Link>
+                    </li>
+
+                    <li>
+                        <Link to ="/users">Users</Link>
+                    </li>
+
+                    <li>
+                        <Link to ="/posts">Posts</Link>
+                    </li>
                 </ul>
                 {/* evaluates values and based on Url renders what is viewed */}
                 <Switch>

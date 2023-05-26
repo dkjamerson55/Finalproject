@@ -1,8 +1,8 @@
 import React from 'react';
-import Navigation from './Components/Navigation';
+// import Navigation from './Components/Navigation';
 import {
   BrowserRouter as Router, 
-  Switch,
+  // Switch,
   Route,
   Link,
   useRouteMatch
@@ -13,8 +13,10 @@ import './App.css';
 export default function App() {
   return (
     <div>
+      {/* <Navigation/> */}
+
       <h1>Hello World 🌎</h1>
-      <Navigation></Navigation>
+      
     </div>
   );
 }

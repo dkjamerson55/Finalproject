@@ -1,18 +1,19 @@
 import React from 'react'
 
-function Users(props) {
-  // const USER_API = https://64412ead792fe886a8a09b3d.mockapi.io/wk12API/users
-  // const {names} = props;
-  return (
-    <div>
-      {/* <ul> 
-        {/* map over names array and for each user element pass index to keep track & return an li with name of user. */}
-        {/* {names.map((user, index) => (
-          <li key={index}>{friend}</li>
+function Users({users}) {
+  return(
+    <div className='card-container'>
+      <Card>
+        {users.map((user, index) => (
+          <tr key={index}>
+           <image src={user.avatar} alt='user avatar'></image>
+           <h3>{user.name}</h3>
+           <h4>{user.mypet}</h4>
+          </tr>
         ))}
-      // </ul> */} Users
+      </Card>
     </div>
-  )
+  )  
 }
 
 export default Users

@@ -1,8 +1,14 @@
 body{
-   color: goldenrod;
+   color: rgb(255, 255, 255);
    text-align: center;
    padding: auto;
    background-color: rgb(51, 50, 50);
+   margin: 0;
+
+}
+h1{
+   color: goldenrod;
+   text-shadow: 4px 4px 4px  #000;
 }
 .container{
    background-color: rgb(51, 49, 49);
@@ -16,11 +22,11 @@ a:visited{
    border-radius: .2em;
    background-color: rgb(202, 157, 97);
    color: #000;
-   font-size: 24px;
+   font-size: 20px;
    padding: 5px;
    box-shadow: 5px 5px 5px rgb(7, 7, 7);
    margin-bottom: 2rem;
-   margin-left: .5rem;
+   margin-left: 1rem;
    
 }
 /*Child of parent .navbar: flex organizes them into row*/
@@ -35,8 +41,10 @@ nav ul li{
    margin-right: 1em;
 }
 
-nav ul li:hover{
-   color: rgba(0, 0, 0, 0.705);
+.nav-link:hover{
+   color: rgb(255, 255, 255);
+   font-size: 22px;
+   text-shadow: 4px 4px 4px black;
 }
 /* gives look of button being pressed when clicked */
 nav ul li:active{

@@ -1,7 +1,9 @@
 import React, {useState, useEffect}from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Home from './Components/Home';
-import Users from './Components/Users';
+import CreateUsers from './Components/CreateUser';
+import UpdateUser from './Components/UpdateUser';
+import DeleteUser from './Components/DeleteUser';
 import Posts from './Components/Posts';
 import './App.css';
 
@@ -40,12 +42,14 @@ export default function App() {
         <hr />
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/users' component={Users}/>
+          <Route path='/users' component={CreateUsers}/>
           <Route path='/posts' component={Posts}/>
         </Switch>
       </div>
 
-      {/* <Users users={users}/> */}
+      <CreateUsers users = {users} MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/>
+      <UpdateUser MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/>
+      <DeleteUser MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/>
     </Router>
     
     

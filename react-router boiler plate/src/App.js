@@ -48,8 +48,8 @@ export default function App() {
       </div>
 
       <CreateUsers users = {users} MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/>
-      <UpdateUser MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/>
-      <DeleteUser MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/>
+      {/* <UpdateUser MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/> */}
+      {/* <DeleteUser MOCK_API_URL={MOCK_API_URL} getUsers={getUsers}/> */}
     </Router>
     
     

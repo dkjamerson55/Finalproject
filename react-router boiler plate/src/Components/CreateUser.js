@@ -33,33 +33,33 @@ function CreateUsers(props) {
   return(
     <div className="User-App">
       <form>
-        <div className='User-form'>
-            <h3>New User Form</h3>
-            <label>User</label> <br/>
+        <div className='user-form'>
+            <h2>New User Form</h2>
+            <label><h3>User: </h3></label> <br/>
             <input onChange={(e) => setNewUser(e.target.value)}></input> <br></br>
             {/* takes an event and setting updated name variable to equal that event */}
-            <label>Pet</label> <br/>
+            <label><h3>Pet: </h3></label> <br/>
             <input onChange={(e) => setNewMyPet(e.target.value)}></input> <br></br>
             <label className='pet-type'>My pet:</label> <br></br> 
             <button className='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
-        </div>
-      </form>
+        </div> 
+      </form> 
       
     
       {props.users.map((user, index) => (
         <div key={index} className='userContainer'>
           <div className='user-list'>
-              Name: {user.name} <br></br>
-              Pet: {user.mypet}<br></br>
+              <h3>Name: {user.name}</h3>
+              <h3>Pet: {user.mypet}</h3><br></br>
               <button onClick={() => DeleteUser(user.id)}>Delete 🗑</button>
           </div> 
           <form>
             <div className='update-form'>
-                <h3>Update This User</h3>
-                <label>Update User Name</label>
+                <h4>Update This User</h4> 
+                <label>Update User Name: </label> <br/>
                 <input onChange={(e) => props.setUpdatedUser(e.target.value)}></input> <br></br>
 
-                <label>Update Pet</label>
+                <label>Update Pet: </label> <br/>
                 <input onChange={(e) => props.setUpdatedMyPet(e.target.value)}></input> <br></br>
 
                 <button onClick={(e) => UpdateUser(e, user)}>Update</button>

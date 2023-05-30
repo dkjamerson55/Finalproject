@@ -4,8 +4,61 @@ body{
    padding: auto;
    background-color: rgb(51, 50, 50);
    margin: 0;
-
 }
+
+.User-App{
+   color: rgb(255, 255, 255);
+   text-align: center;
+   background-color: rgb(51, 50, 50);
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0em;
+   padding: 5px;
+   justify-content: center;
+}
+.userContainer{
+   display: flex;
+   margin: 5em;
+   border: 1px solid black;
+   border-radius: 1em;
+   background-color:  rgb(199, 131, 42);
+   color: white;
+   text-shadow: 1px 1px 3px black;
+   padding: 5px;
+   justify-content: center;
+}
+
+.user-form{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin: 2em;
+   border: 1px solid black;
+   border-radius: 1em;
+   background-color:  rgb(199, 131, 42);
+   color: white;
+   text-shadow: 1px 1px 3px black;
+   padding: 7px;
+   text-align: center;
+   align-items: center;
+}
+
+.submit{
+   width: auto;
+   height: auto;
+   justify-content: center;
+   align-items: center;
+   margin-left: 8%;
+   margin-top: 1em;
+}
+
+
+.update-form{
+   display: flexbox;
+   text-align: center;
+   justify-self: right;
+}
+
 h1{
    color: goldenrod;
    text-shadow: 4px 4px 4px  #000;

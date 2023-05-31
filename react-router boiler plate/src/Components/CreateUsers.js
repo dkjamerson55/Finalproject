@@ -41,19 +41,25 @@ function CreateUsers(props) {
 
   // connecting to the post & update methods
   return(
+    
     <div className="User-App">
-      <form>
-        <div className='user-form'>
-            <h2>New User Form</h2>
-            <label><h3>User: </h3></label> <br/>
-            <input onChange={(e) => setNewUser(e.target.value)}></input> <br></br>
-            {/* takes an event and setting updated name variable to equal that event */}
-            <label><h3>Pet: </h3></label> <br/>
-            <input onChange={(e) => setNewMyPet(e.target.value)}></input> <br></br>
-            <label className='pet-type'>My pet:</label> <br></br> 
-            <button className='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
-        </div> 
-      </form> 
+      <Card key={root}>
+        <CardTitle tag='h2'>New User</CardTitle>
+        <CardBody>
+          <form>
+            <div className='user-form'>
+                <h2 className='user-title'>New User Form</h2>
+                <label><h3>User: </h3></label> <br/>
+                <input onChange={(e) => setNewUser(e.target.value)}></input> <br></br>
+                {/* takes an event and setting updated name variable to equal that event */}
+                <label><h3>Pet: </h3></label> <br/>
+                <input onChange={(e) => setNewMyPet(e.target.value)}></input> <br></br>
+                <label className='pet-type'>My pet:</label> <br></br> 
+                <button className='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
+            </div> 
+          </form> 
+        </CardBody>
+    </Card>
       
     
       {props.users.map((user, index) => (

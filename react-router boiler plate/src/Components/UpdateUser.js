@@ -3,7 +3,7 @@ import CreateUsers from './CreateUsers'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
 function UpdateUser(props,e, userObject) {
-    // e.preventDefault()
+    e.preventDefault()
 
     const [updatedUser, setUpdatedUser] = useState('')
     const [updatedMyPet, setUpdatedMyPet] = useState('')

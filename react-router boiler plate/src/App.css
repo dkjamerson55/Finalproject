@@ -27,7 +27,10 @@ body{
    padding: 5px;
    justify-content: center;
 }
-
+.user-title{
+   display: flex;
+   flex-flow: column;
+}
 .user-form{
    display: flex;
    flex-wrap: wrap;

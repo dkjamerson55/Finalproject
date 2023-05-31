@@ -1,7 +1,7 @@
 import React, {useState, useEffect}from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Home from './Components/Home';
-import CreateUsers from './Components/CreateUser';
+import CreateUsers from './Components/CreateUsers';
 import UpdateUser from './Components/UpdateUser';
 import DeleteUser from './Components/DeleteUser';
 import Posts from './Components/Posts';
@@ -15,6 +15,7 @@ export default function App() {
     mypet: '',
     avatar: '',
   }])
+  
   
   useEffect(() => {
     fetch(MOCK_API_URL)

@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateUsers from './CreateUser'
+import CreateUsers from './CreateUsers'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 function DeleteUser(props, id) {

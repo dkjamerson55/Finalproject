@@ -73,7 +73,9 @@ a:visited{
    text-decoration: none;
    color: white;
 }
-.navbar{
+.nav-container{
+   text-decoration: none;
+   height: 5vw;
    width: 95vw;
    border-radius: .2em;
    background-color: rgb(202, 157, 97);
@@ -92,18 +94,19 @@ a:visited{
    justify-content: right;
 }
 /* list-style type set to none removes list elements */
-nav ul li{
+.navbar-item{
+   font-size: larger;
    list-style-type: none;
    margin-right: 1em;
 }
 
-.nav-link:hover{
+.navbar-item:hover{
    color: rgb(255, 255, 255);
    font-size: 22px;
    text-shadow: 4px 4px 4px black;
 }
 /* gives look of button being pressed when clicked */
-nav ul li:active{
+.navbar-item:active{
    background-color: rgb(3, 40, 71);
    border-radius: .5rem;
    box-shadow: 10px 5px 5px black;

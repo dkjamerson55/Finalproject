@@ -1,6 +1,7 @@
 import React, {useState, useEffect}from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Home from './Components/Home';
+import Navbar from './Components/Navbar';
 import CreateUsers from './Components/CreateUsers';
 import UpdateUser from './Components/UpdateUser';
 import DeleteUser from './Components/DeleteUser';
@@ -33,13 +34,7 @@ export default function App() {
     <Router>
       <div className='container'>
         <h1>Hello World 🌎</h1>
-        <nav className='navbar'>
-          <ul className='navbar-nav'>
-            <li><Link to ={'/'} className='nav-link' style={{textDecoration: 'none'}}>Home</Link></li>
-            <li><Link to ={'/users'} className='nav-link' style={{textDecoration: 'none'}}>Users</Link></li>
-            <li><Link to ={'/posts'} className='nav-link' style={{textDecoration: 'none'}}>Posts</Link></li>
-          </ul>
-        </nav>
+        <Navbar/>
         <hr />
         <Switch>
           <Route exact path='/' component={Home}/>

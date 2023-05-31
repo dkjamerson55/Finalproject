@@ -10,7 +10,7 @@ function Navbar() {
     role='navigation'
     aria-label='main navigation'
     >
-        <div className='container'>
+        <div className='nav-container'>
             <div className='navbar-brand'>
                 <a
                     role='button'
@@ -25,8 +25,13 @@ function Navbar() {
                 </a>
             </div>
                 <div className={`navbar-menu ${isOpen && "is-active"}`}>
-                    <div className="navbar-start">
-                        <NavLink className="navbar-item" activeClassName="is-active" to="/">
+                    <div className="navbar-nav">
+                        <NavLink 
+                        className="navbar-item" 
+                        activeClassName="is-active" 
+                        to="/"
+                        style={{textDecoration: 'none'}}
+                        >
                         Home
                         </NavLink>
 
@@ -34,6 +39,7 @@ function Navbar() {
                         className="navbar-item"
                         activeClassName="is-active"
                         to="/users"
+                        style={{textDecoration: 'none'}}
                         >
                         Users
                         </NavLink>
@@ -42,8 +48,9 @@ function Navbar() {
                         className="navbar-item"
                         activeClassName="is-active"
                         to="/posts"
+                        style={{textDecoration: 'none'}}
                         >
-                        Profile
+                        Posts
                         </NavLink>
                     </div>
                 </div>

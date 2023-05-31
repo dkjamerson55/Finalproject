@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import UpdateUser from './UpdateUser'
 import DeleteUser from './DeleteUser'
+import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min'
 import {
   Card,
   CardSubtitle,
-  CardText,
   CardTitle,
   CardBody,
   CardImg,
@@ -36,7 +36,7 @@ function CreateUsers(props) {
       headers: {"Content-Type": "application/json"}, //helps back-end read the data
       body: JSON.stringify(data), 
 
-    }).then(() => props.getUsers())
+    }).then(() => getUsers())
   }
 
   // connecting to the post & update methods
@@ -54,7 +54,6 @@ function CreateUsers(props) {
                 {/* takes an event and setting updated name variable to equal that event */}
                 <label><h3>Pet: </h3></label> <br/>
                 <input onChange={(e) => setNewMyPet(e.target.value)}></input> <br></br>
-                <label className='pet-type'>My pet:</label> <br></br> 
                 <button className='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
             </div> 
           </form> 
@@ -63,10 +62,10 @@ function CreateUsers(props) {
       
     
       {props.users.map((user, index) => (
-        <Card className='card'>
+        <Card key={index} className='card'>
           <CardBody>
             <CardTitle tag='h4'>User</CardTitle>
-              <div key={index} className='userContainer'>
+              <div className='userContainer'>
                 <div className='user-list'>
                     <CardSubtitle><h3>Name: {user.name}</h3></CardSubtitle>
                     <h3>Pet: {user.mypet}</h3><br></br>

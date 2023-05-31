@@ -17,7 +17,7 @@ function UpdateUser(props,e, userObject) {
         mypet: updatedMyPet
     }
 
-    fetch(`${props.MOCK_API_URL}/${userObject.id}`,{
+    fetch(`${props.MOCK_API_URL}/${userObject.props.id}`,{
         method: 'PUT',
         body: JSON.stringify({updatedUserObject}),
         headers: {"Content-Type": "application/json"}

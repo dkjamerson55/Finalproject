@@ -4,7 +4,7 @@ import useRouteMatch from 'react'
 function Posts({ posts }) {
 
   const match = useRouteMatch();
-  const finstPostById = (id) =>
+  const findPostById = (id) =>
     posts.filter((post) => post.id == id)[0];
   return (
     <div>

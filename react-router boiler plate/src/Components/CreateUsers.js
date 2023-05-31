@@ -44,17 +44,18 @@ function CreateUsers(props) {
     
     <div className="User-App">
       <Card key={root}>
-        <CardTitle tag='h2'>New User</CardTitle>
         <CardBody>
           <form>
             <div className='user-form'>
                 <h2 className='user-title'>New User Form</h2>
-                <label><h3>User: </h3></label> <br/>
-                <input onChange={(e) => setNewUser(e.target.value)}></input> <br></br>
-                {/* takes an event and setting updated name variable to equal that event */}
-                <label><h3>Pet: </h3></label> <br/>
-                <input onChange={(e) => setNewMyPet(e.target.value)}></input> <br></br>
-                <button className='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
+                  <div>
+                    <label><h3>User: </h3></label>
+                    <input onChange={(e) => setNewUser(e.target.value)}></input> <br></br>
+                    {/* takes an event and setting updated name variable to equal that event */}
+                    <label><h3>Pet: </h3></label>
+                    <input onChange={(e) => setNewMyPet(e.target.value)}></input> <br></br>
+                    <button className='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
+                  </div>
             </div> 
           </form> 
         </CardBody>
@@ -64,7 +65,6 @@ function CreateUsers(props) {
       {props.users.map((user, index) => (
         <Card key={index} className='card'>
           <CardBody>
-            <CardTitle tag='h4'>User</CardTitle>
               <div className='userContainer'>
                 <div className='user-list'>
                     <CardSubtitle><h3>Name: {user.name}</h3></CardSubtitle>
@@ -75,7 +75,7 @@ function CreateUsers(props) {
                       style={{width: 120, height: 140}}
                       alt='user avatar'
                     />
-                    <button onClick={() => DeleteUser(user.id)}>Delete 🗑</button>
+                    <button className='delete' onClick={() => DeleteUser(user.id)}>Delete 🗑</button>
                 </div> 
                 <form>
                   <div className='update-form'>
@@ -86,7 +86,7 @@ function CreateUsers(props) {
                       <label>Update Pet: </label> <br/>
                       <input onChange={(e) => props.setUpdatedMyPet(e.target.value)}></input> <br></br>
 
-                      <button onClick={(e) => UpdateUser(e, user)}>Update</button>
+                      <button className='update' onClick={(e) => UpdateUser(e, user)}>Update</button>
                       
                   </div>
                 </form>

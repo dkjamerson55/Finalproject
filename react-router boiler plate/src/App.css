@@ -105,3 +105,13 @@ nav ul li:active{
    border-radius: .5rem;
    box-shadow: 10px 5px 5px black;
 }
+
+.avatar{
+   display: flex;
+   justify-content: flex-start;
+   margin-left: 3rem;
+   margin-bottom: 2rem;
+   margin-right: 2rem;
+   border-radius: .5rem;
+   box-shadow: 10px 5px 5px black;
+}

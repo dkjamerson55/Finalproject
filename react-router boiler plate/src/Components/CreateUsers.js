@@ -27,7 +27,7 @@ function CreateUsers(props) {
       //key value pairs
       name: newUser, 
       artist: newMyPet, 
-      MOCK_API_URL: [],
+      // MOCK_API_URL: [],
       
     }
 
@@ -67,7 +67,7 @@ function CreateUsers(props) {
                     <CardImg
                       className='avatar'
                       src={user.avatar}
-                      style={{width: 50, height: 60}}
+                      style={{width: 120, height: 140}}
                       alt='user avatar'
                     />
                     <button onClick={() => DeleteUser(user.id)}>Delete 🗑</button>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import UpdateUser from './UpdateUser'
 import DeleteUser from './DeleteUser'
 import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min'
@@ -10,28 +10,51 @@ import {
   CardImg,
 } from "reactstrap"
 
-function CreateUsers(props) {
+function CreateUsers() {
+  const MOCK_API_URL = "https://64412ead792fe886a8a09b3d.mockapi.io/wk12API/users"
+ 
+  const [users, setUsers] = useState([{
+    name: '',
+    mypet: '',
+    avatar: '',
+  }])
+   //variables for holding new information in state
+   const [newUser, setNewUser] = useState('')
+   const [newMyPet, setNewMyPet] = useState ('')
+   const [updatedUser, setUpdatedUser] = useState('')
+   const [updatedMyPet, setUpdatedMyPet] = useState('')
   
-  //calling props for using useState to set and fetch a value in jsx
-  props.users
-  props.MOCK_API_URL
+  useEffect(() => {
+    fetch(MOCK_API_URL)
+    .then(data => data.json()) 
+    // .then((data) => console.log(data)) shows mockAPI [data]
+    .then(data => setUsers(data))
+  }, []) // empty array ensures that re-render is only handled once instead of an infinite loop
 
-  //variables for holding new information in state
-  const [newUser, setNewUser] = useState('')
-  const [newMyPet, setNewMyPet] = useState ('')
-  // const [newAvatar, setNewAvatar]= useState('')
-  
+  //get function to retrieve and covert data to json
+  const getUsers = () => {
+    fetch(MOCK_API_URL)
+    .then(data => data.json()) // converting data to json
+    .then(data => setUsers(data)) // setting users equal to the data
+  }
+
+  function DeleteUser(id) {
+    fetch(`${MOCK_API_URL}/${id}`, {
+        method: 'DELETE'
+      }).then(() => getUsers()) // will trigger re-render (update users after deleting user)
+}
+
   
   const handleSubmit = (e) => {
     e.preventDefault(); //to prevent reload
     let data = {
       //key value pairs
       name: newUser, 
-      artist: newMyPet, 
+      mypet: newMyPet, 
       // MOCK_API_URL: [],
-      
     }
 
+    // used to retrieve data from api before posting new data and retrieving new state
     fetch(MOCK_API_URL, {
       method: 'POST',
       headers: {"Content-Type": "application/json"}, //helps back-end read the data
@@ -39,6 +62,24 @@ function CreateUsers(props) {
 
     }).then(() => getUsers())
   }
+
+  function UpdateUser(e, userObject) {
+    e.preventDefault()
+
+    //object variable that spreads out exising key value pairs, then updates name with whatever variables are input.
+    let updatedUserObject = {
+        ...userObject,
+        user: updatedUser,
+        mypet: updatedMyPet
+    }
+
+    fetch(`${MOCK_API_URL}/${userObject.id}`,{
+        method: 'PUT',
+        body: JSON.stringify({updatedUserObject}),
+        headers: {"Content-Type": "application/json"}
+      }).then(() => getUsers())
+  
+}
 
   // connecting to the post & update methods
   return(
@@ -63,7 +104,7 @@ function CreateUsers(props) {
     </Card>
       
     
-      {props.users.map((user, index) => (
+      {users.map((user, index) => (
         <Card key={index} className='card'>
           <CardBody>
               <div className='userContainer'>
@@ -82,10 +123,10 @@ function CreateUsers(props) {
                   <div className='update-form'>
                       <h4>Update This User</h4> 
                       <label>Update User Name: </label> <br/>
-                      <input onChange={(e) => props.setUpdatedUser(e.target.value)}></input> <br></br>
+                      <input onChange={(e) => setUpdatedUser(e.target.value)}></input> <br></br>
 
                       <label>Update Pet: </label> <br/>
-                      <input onChange={(e) => props.setUpdatedMyPet(e.target.value)}></input> <br></br>
+                      <input onChange={(e) => setUpdatedMyPet(e.target.value)}></input> <br></br>
 
                       <button className='update' onClick={(e) => UpdateUser(e, user)}>Update</button>
                       

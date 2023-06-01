@@ -8,8 +8,6 @@ function UpdateUser(props,e, userObject) {
     const [updatedUser, setUpdatedUser] = useState('')
     const [updatedMyPet, setUpdatedMyPet] = useState('')
 
-    
-
     //object variable that spreads out exising key value pairs, then updates name with whatever variables are input.
     let updatedUserObject = {
         ...userObject,

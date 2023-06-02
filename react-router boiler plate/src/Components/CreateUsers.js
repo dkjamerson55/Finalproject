@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import UpdateUser from './UpdateUser'
-import DeleteUser from './DeleteUser'
+
 import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min'
 import {
   Card,
@@ -54,6 +53,8 @@ function CreateUsers() {
       // MOCK_API_URL: [],
     }
 
+    
+
     // used to retrieve data from api before posting new data and retrieving new state
     fetch(MOCK_API_URL, {
       method: 'POST',
@@ -63,7 +64,7 @@ function CreateUsers() {
     }).then(() => getUsers())
   }
 
-  function UpdateUser(e, userObject) {
+  function updateUser(e, userObject) {
     e.preventDefault()
 
     //object variable that spreads out exising key value pairs, then updates name with whatever variables are input.
@@ -128,7 +129,7 @@ function CreateUsers() {
                       <label>Update Pet: </label> <br/>
                       <input onChange={(e) => setUpdatedMyPet(e.target.value)}></input> <br></br>
 
-                      <button className='update' onClick={(e) => UpdateUser(e, user)}>Update</button>
+                      <button className='update' onClick={(e) => updateUser(e, user)}>Update</button>
                       
                   </div>
                 </form>

@@ -17,7 +17,7 @@ export default function App() {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/users' render={() => <CreateUsers/>}/>
-          <Route path='/posts' element={<Posts/>}/>
+          <Route path='/posts' render={() => <Posts/>}/>
         </Switch>
       </div>
     </Router>

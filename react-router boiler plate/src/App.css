@@ -167,3 +167,49 @@ a:visited{
    font-family: Georgia, 'Times New Roman', Times, serif;
    text-shadow: 2px 2px 2px black;
 }
+
+.post-img{
+   margin-left: 4rem;
+   margin-bottom: 2rem;
+   border-radius: 2rem;
+   box-shadow: 4px 4px 4px black;
+}
+
+.horse-img{
+   margin-left: 4rem;
+   border-radius: 2rem;
+   box-shadow: 4px 4px 4px black;
+}
+.dog-img{
+   margin-left: 4rem;
+   border-radius: 2rem;
+   box-shadow: 4px 4px 4px black;
+}
+.cat-img{
+   margin-left: 4rem;
+   border-radius: 2rem;
+   box-shadow: 4px 4px 4px black;
+}
+.parrot-img{
+   margin-left: 4rem;
+   border-radius: 2rem;
+   box-shadow: 4px 4px 4px black;
+}
+.people{
+   margin: 2rem;
+}
+
+.horse-post{
+   margin: 2rem;
+}
+
+.dog-post{
+   margin: 2rem;
+}
+.cat-post{
+   margin: 2rem;
+}
+.parrot-post{
+   margin: 2rem;
+}
+

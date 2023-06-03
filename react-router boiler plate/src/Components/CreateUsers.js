@@ -21,7 +21,11 @@ function CreateUsers() {
    const [newUser, setNewUser] = useState('')
    const [newMyPet, setNewMyPet] = useState ('')
    const [updatedUser, setUpdatedUser] = useState('')
-   const [updatedMyPet, setUpdatedMyPet] = useState('')
+   const [updatedMyPet, setUpdatedMyPet] = useState([{
+    updatedName: '',
+    updatedMypet: '',
+    avatar: '',
+  }])
   
   useEffect(() => {
     fetch(MOCK_API_URL)
@@ -42,7 +46,14 @@ function CreateUsers() {
         method: 'DELETE'
       }).then(() => getUsers()) // will trigger re-render (update users after deleting user)
 }
-
+  const handleChange = (e) => {
+    let prop = e.target.updatedUser;
+    let value = e.target.value;
+    setUpdatedUser((prev) => ({...prev, [prop]: value}));
+    
+    
+    console.log(e);
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault(); //to prevent reload
@@ -124,10 +135,10 @@ function CreateUsers() {
                   <div className='update-form'>
                       <h4>Update This User</h4> 
                       <label>Update User Name: </label> <br/>
-                      <input onChange={(e) => setUpdatedUser(e.target.value)}></input> <br></br>
+                      <input onChange={(e) => handleChange(e)}></input> <br></br>
 
                       <label>Update Pet: </label> <br/>
-                      <input onChange={(e) => setUpdatedMyPet(e.target.value)}></input> <br></br>
+                      <input onChange={(e) => handleChange(e)}></input> <br></br>
 
                       <button className='update' onClick={(e) => updateUser(e, user)}>Update</button>
                       
